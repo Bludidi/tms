@@ -1,0 +1,9 @@
+# test_data.yml
+user:
+  name: John Doe
+  age: 30
+  email: john.doe@example.com
+  interests:
+    - programming
+    - hiking
+    - photography

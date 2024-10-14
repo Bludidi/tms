@@ -69,3 +69,4 @@ group :test do
 end
 
 gem "ostruct"
+gem "dotenv-rails", groups: [:development, :test]

@@ -1,5 +1,5 @@
 <section>
 <% @users.each do |user| %>
-<p><%= user.name %></p>
+<p><%= link_to user.name, user_path(user.id) %></p>
 <% end %>
 </section>

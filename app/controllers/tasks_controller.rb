@@ -17,11 +17,11 @@ end
 def create
   @task = Task.new(task_params)
 
-  if @task.save
+  if @task.save!
+    render status: :ok, json: { notice: 'Task created successfully' }
     redirect_to :action => 'index'
   else render :action => 'new'
   end
-
 end
 
 def update
@@ -32,6 +32,8 @@ def destroy
   @task = Task.find(params[:id]).destroy
   redirect_to :action => 'index'
 end
+
+private 
 
 def task_params
   params.require(:task).permit(:user_id, :title, :description, :priority, :status, :due_date)

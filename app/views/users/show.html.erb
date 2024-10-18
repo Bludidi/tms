@@ -1,4 +1,5 @@
 <section>
-<p><%= @user.name %></p>
+<h2>Hello <%= @user.name %>,</h2>
+<p>See your tasks <%= link_to "here", user_tasks_path(@user.id) %></p>
 
 </section>

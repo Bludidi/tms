@@ -1,4 +1,5 @@
 <section>
+<h2>Hello <%= @user.name %>, here is a list of your available tasks:</h2>
 <% @tasks.each do |task| %>
 <p><%= task.title %></p>
 <% end %>

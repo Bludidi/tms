@@ -1,5 +1,6 @@
 <section>
 <% @users.each do |user| %>
-<p><%= user.name %></p>
+<p><%= link_to user.name, user_path(user.id) %></p>
 <% end %>
+<p>To create a new user click <%= link_to "here", new_user_path() %> </p>
 </section>

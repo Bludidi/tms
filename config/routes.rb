@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
    root to: "users#index"
 
-   resources :users, only:[:index, :show, :create, :delete] do
-    resources :tasks, only:[:index, :show, :create, :update, :destroy]
-  end
+   resources :users, only:[:index, :show, :new, :create, :destroy] do
+   resources :tasks, only:[:index, :show, :create, :update, :destroy] 
+   end
+  #  post '/users/user/create', to: 'user#create', as: 'create_user'
 end

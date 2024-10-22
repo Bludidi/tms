@@ -3,4 +3,5 @@
 <% @tasks.each do |task| %>
 <p><%= task.title %></p>
 <% end %>
+<%= link_to "Add task", new_user_task_path() %>
 </section>

@@ -1,0 +1,16 @@
+<h1>New Task</h1>
+
+<%= form_with model: @task, url: create_task_path() do |form| %>
+  <%= form.label "Title" %>
+  <%= form.text_field :title  %>
+  <%= form.label "Description" %>
+  <%= form.text_field :description  %>
+  <%= form.label "Status" %>
+  <%= form.text_field :status  %>
+  <%= form.label "Priority" %>
+  <%= form.text_field :priority  %>
+  <%= form.label "Due date" %>
+  <%= form.text_field :due_date  %>
+  <%= form.hidden_field value: @user.id  %>
+  <%= form.submit %>
+<% end %>

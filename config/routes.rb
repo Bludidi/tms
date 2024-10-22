@@ -9,7 +9,8 @@ Rails.application.routes.draw do
    root to: "users#index"
 
    resources :users, only:[:index, :show, :new, :create, :destroy] do
-   resources :tasks, only:[:index, :show, :create, :update, :destroy] 
+   resources :tasks, only:[:index, :show, :new, :create, :update, :destroy] 
    end
   #  post '/users/user/create', to: 'user#create', as: 'create_user'
+    post '/users/:user_id/tasks', to: 'tasks#create', as: 'create_task'
 end

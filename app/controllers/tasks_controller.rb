@@ -5,7 +5,8 @@ def index
    @tasks = @user.tasks
 end
 
-def new 
+def new
+  @user = User.find(params[:user_id])
   @task = Task.new
 end
 
@@ -15,11 +16,11 @@ def show
 end
 
 def create
-  @task = Task.new(task_params)
+  @user = User.find(params[:user_id])
+  @task = @user.tasks.new(task_params)
 
   if @task.save!
-    render status: :ok, json: { notice: 'Task created successfully' }
-    redirect_to :action => 'index'
+    redirect_to user_tasks_path(@user), notice: 'Task created successfully.'
   else render :action => 'new'
   end
 end

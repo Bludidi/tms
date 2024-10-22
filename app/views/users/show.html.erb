@@ -1,5 +1,6 @@
 <section>
 <h2>Hello <%= @user.name %>,</h2>
 <p>You have <%= @tasks.length %> tasks in total. <br> To view them click <%= link_to "here", user_tasks_path(@user.id) %></p>
-<p>To delete your profile click <%=link_to 'here',  %></p>
+
+<button>Delete profile</button>
 </section>

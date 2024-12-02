@@ -13,4 +13,6 @@ Rails.application.routes.draw do
    end
   #  post '/users/user/create', to: 'user#create', as: 'create_user'
     post '/users/:user_id/tasks', to: 'tasks#create', as: 'create_task'
+    delete '/users/:user_id/tasks/:id', to: 'tasks#destroy', as: 'delete_task' 
+    delete '/users/:id', to: 'users#destroy', as: 'delete_user'
 end

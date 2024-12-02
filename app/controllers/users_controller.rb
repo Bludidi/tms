@@ -22,8 +22,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
-    @user = User.find(params[:id]).destroy
+  def destroy
+    @user = User.find(params[:id])
+    if @user
+      @user.destroy
+      redirect_to root_path notice: 'User deleted successfully'
+    else
+      redirect_to root_path alert: 'User not found'
+    end
   end
 
   # private 

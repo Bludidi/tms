@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery
+  # 
+  # skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
 
   # rescue_from StandardError, with: :handle_api_exception
 

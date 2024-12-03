@@ -10,7 +10,6 @@
   <%= form.label "Priority" %>
   <%= form.text_field :priority  %>
   <%= form.label "Due date" %>
-  <%= form.text_field :due_date  %>
-  <%= form.hidden_field value: @user.id  %>
+  <%= form.datetime_select :due_date  %>
   <%= form.submit %>
 <% end %>

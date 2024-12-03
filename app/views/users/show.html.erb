@@ -1,6 +1,6 @@
 <section>
-<h2>Hello <%= @user.name %>,</h2>
+<h2>Hello <%= @user.name %></h2>
 <p>You have <%= @tasks.length %> tasks in total. <br> To view them click <%= link_to "here", user_tasks_path(@user.id) %></p>
 
-<button>Delete profile</button>
+<%= button_to "Delete #{@user.name}'s Profile", delete_user_path(), method: :delete %>
 </section>

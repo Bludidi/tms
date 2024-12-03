@@ -1,7 +1,9 @@
 <section>
 <h2>Hello <%= @user.name %>, here is a list of your available tasks:</h2>
 <% @tasks.each do |task| %>
-<p><%= task.title %></p>
+<%= link_to user_task_path(@user.id, task.id) do %>
+<div><p>Task id: <%= task.id %>, User id: <%= task.user_id %>, Title: <%= task.title %></p></div>
+<% end %>
 <% end %>
 <%= link_to "Add task", new_user_task_path() %>
 </section>
